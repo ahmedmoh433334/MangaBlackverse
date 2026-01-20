@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Disable Next.js hot reload, handled by nodemon
+  // Disable Next.js hot reload in production
   reactStrictMode: false,
   eslint: {
     // Ignore ESLint errors during build
@@ -35,7 +35,10 @@ const nextConfig: NextConfig = {
       },
     ],
     unoptimized: false,
-  }
+  },
+  // Vercel deployment optimization
+  swcMinify: true,
+  compress: true,
 };
 
 export default nextConfig;
